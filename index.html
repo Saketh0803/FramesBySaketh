@@ -1,669 +1,561 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRAMES BY SAKETH — Independent Visual Artist & Photographer</title>
-    <meta name="description" content="FRAMES BY SAKETH — Freelance portrait, couple, and commercial photography. Precision in every frame through intentional composition and natural light.">
+    <title>FRAMES BY SAKETH — Precision in Every Frame</title>
+    <meta name="description" content="FRAMES BY SAKETH — Luxury Portrait, Couple, and Commercial Photography based in Hyderabad, India. Precision in Every Frame.">
     
-    <!-- Google Fonts & Font Awesome Icons -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --bg-dark: #070707;
-            --bg-card: #0f0f11;
-            --bg-elevated: #151518;
-            --accent: #d4af37; /* Muted Amber Gold */
-            --accent-glow: rgba(212, 175, 55, 0.15);
-            --text-main: #f5f5f7;
-            --text-muted: #8e8e93;
-            --border: rgba(255, 255, 255, 0.08);
-            --border-active: rgba(212, 175, 55, 0.4);
-            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, .brand-font {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 2px;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 8%;
-            background: rgba(7, 7, 7, 0.88);
-            backdrop-filter: blur(16px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-main);
-            text-decoration: none;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .logo span.signature {
-            color: var(--accent);
-            margin-left: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 1.5rem;
-            background: linear-gradient(180deg, rgba(7,7,7,0.3) 0%, rgba(7,7,7,0.95) 100%), 
-                        url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.2rem, 5.5vw, 4.5rem);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 620px;
-            margin-bottom: 2.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .btn {
-            padding: 0.9rem 2.2rem;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2.5px;
-            transition: var(--transition);
-            background: transparent;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            background: var(--accent);
-            color: var(--bg-dark);
-            box-shadow: 0 0 25px var(--accent-glow);
-        }
-
-        /* Section Layouts */
-        section {
-            padding: 6.5rem 8%;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .section-header p {
-            color: var(--accent);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        /* Portfolio Gallery Filter Buttons */
-        .gallery-filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3.5rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            padding: 0.6rem 1.4rem;
-            cursor: pointer;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: var(--transition);
-            border-bottom: 2px solid transparent;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            color: var(--accent);
-            border-bottom: 2px solid var(--accent);
-        }
-
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.8rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 4px;
-            overflow: hidden;
-            cursor: pointer;
-            aspect-ratio: 3/4;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.06);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2rem;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay h3 {
-            font-size: 1.15rem;
-            color: #fff;
-            margin-bottom: 0.2rem;
-        }
-
-        .gallery-overlay p {
-            color: var(--accent);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        /* Lightbox Modal */
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            padding: 2rem;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 85vh;
-            border-radius: 4px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.9);
-            border: 1px solid var(--border);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .lightbox-close:hover {
-            color: var(--accent);
-        }
-
-        /* Grid Cards Layout */
-        .grid-two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3.5rem;
-            background: var(--bg-card);
-            padding: 3.5rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-        }
-
-        @media (max-width: 850px) {
-            .grid-two-col { 
-                grid-template-columns: 1fr; 
-                padding: 2rem;
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amberGold: {
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#e5a93b',
+                            600: '#d4af37',
+                            700: '#b45309',
+                            glow: 'rgba(229, 169, 59, 0.25)'
+                        },
+                        obsidian: {
+                            base: '#08080a',
+                            surface: '#0d0d0f',
+                            card: '#121215',
+                            border: 'rgba(255, 255, 255, 0.08)'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
             }
         }
-
-        .form-group {
-            margin-bottom: 1.5rem;
+    </script>
+    
+    <style>
+        body {
+            background-color: #08080a;
+            color: #f5f5f7;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .font-serif-brand {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.03em;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.6rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fff2d1 0%, #e5a93b 50%, #b88320 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .form-group select, .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.9rem;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            color: var(--text-main);
+        .pill-glow {
+            box-shadow: 0 0 25px rgba(229, 169, 59, 0.35);
+        }
+
+        .card-gold-glow {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(229, 169, 59, 0.1);
+        }
+
+        /* Custom luxury scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08080a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222228;
             border-radius: 4px;
-            font-family: inherit;
-            transition: var(--transition);
         }
-
-        .form-group select:focus, .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--border-active);
-        }
-
-        .estimate-box {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 2.5rem;
-            text-align: center;
-        }
-
-        .estimate-price {
-            font-size: 3.2rem;
-            color: var(--accent);
-            font-weight: 700;
-            margin: 1.2rem 0;
-            font-family: 'Cinzel', serif;
-        }
-
-        /* Contact Cards */
-        .contact-info-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 1.4rem;
-            padding: 1.4rem;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-        }
-
-        .contact-card i {
-            font-size: 1.4rem;
-            color: var(--accent);
-            width: 40px;
-            text-align: center;
-        }
-
-        .contact-card div h4 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 0.2rem;
-        }
-
-        .contact-card div p, .contact-card div a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .contact-card div a:hover {
-            color: var(--accent);
-        }
-
-        /* Form Status Notification */
-        #form-status {
-            display: none;
-            padding: 0.9rem;
-            margin-bottom: 1.2rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            text-align: center;
-        }
-
-        #form-status.success {
-            display: block;
-            background: rgba(40, 167, 69, 0.15);
-            border: 1px solid #28a745;
-            color: #28a745;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            text-align: center;
-            padding: 3.5rem 8%;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.8rem;
-            margin-bottom: 1.8rem;
-        }
-
-        .social-icons a {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .social-icons a:hover {
-            color: var(--accent);
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e5a93b;
         }
     </style>
 </head>
-<body>
+<body class="bg-obsidian-base text-gray-200 antialiased selection:bg-amberGold-500 selection:text-black">
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#" class="logo">FRAMES <span class="signature">BY SAKETH</span></a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#booking">Estimator</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="fixed top-0 left-0 w-full z-50 bg-obsidian-base/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 h-22 flex items-center justify-between py-4">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex flex-col group">
+                <span class="font-serif-brand text-2xl sm:text-3xl font-bold tracking-wider text-white group-hover:text-amberGold-500 transition-colors uppercase leading-none">
+                    FRAMES <span class="text-amberGold-500">BY SAKETH</span>
+                </span>
+                <span class="text-[9px] uppercase tracking-[0.28em] text-amberGold-500/80 font-semibold mt-1">
+                    PRECISION IN EVERY FRAME
+                </span>
+            </a>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Precision in Every Frame</h1>
-        <p>Freelance Portrait, Couple, and Commercial Photography based in India.</p>
-        <a href="#portfolio" class="btn">Explore Archives</a>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-10 text-xs font-bold tracking-[0.2em] uppercase text-gray-300">
+                <a href="#about" class="hover:text-amberGold-500 transition-colors">ABOUT</a>
+                <a href="#portfolio" class="hover:text-amberGold-500 transition-colors">PORTFOLIO</a>
+                <a href="#booking" class="hover:text-amberGold-500 transition-colors">ESTIMATOR</a>
+                <a href="#contact" class="hover:text-amberGold-500 transition-colors">CONTACT</a>
+            </nav>
+
+            <!-- Pill CTA Button -->
+            <div class="hidden md:block">
+                <a href="#booking" class="px-7 py-3 rounded-full text-xs font-extrabold uppercase tracking-widest bg-amberGold-500 hover:bg-amberGold-400 text-black transition-all duration-300 pill-glow transform hover:-translate-y-0.5">
+                    BOOK SESSION
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-obsidian-surface border-b border-amberGold-500/20 px-6 py-6 space-y-4">
+            <a href="#about" class="mobile-nav-link block text-xs font-semibold uppercase tracking-widest text-gray-300 hover:text-amberGold-500 py-2">ABOUT</a>
+            <a href="#portfolio" class="mobile-nav-link block text-xs font-semibold uppercase tracking-widest text-gray-300 hover:text-amberGold-500 py-2">PORTFOLIO</a>
+            <a href="#booking" class="mobile-nav-link block text-xs font-semibold uppercase tracking-widest text-gray-300 hover:text-amberGold-500 py-2">ESTIMATOR</a>
+            <a href="#contact" class="mobile-nav-link block text-xs font-semibold uppercase tracking-widest text-gray-300 hover:text-amberGold-500 py-2">CONTACT</a>
+            <a href="#booking" class="mobile-nav-link block w-full text-center px-5 py-3.5 rounded-full text-xs uppercase tracking-widest font-extrabold bg-amberGold-500 text-black mt-2">
+                BOOK SESSION
+            </a>
+        </div>
+    </header>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
+        <!-- Golden Backdrop Ambient Glow -->
+        <div class="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-amberGold-500/10 rounded-full blur-[160px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Column: Typography & CTAs -->
+                <div class="lg:col-span-7 space-y-7 text-left">
+                    
+                    <!-- Availability Badge Pill -->
+                    <div class="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-obsidian-card border border-amberGold-500/30 text-amberGold-500 text-[11px] font-bold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-amberGold-500 animate-ping"></span>
+                        <span>AVAILABLE WORLDWIDE FOR COMMISSIONS</span>
+                    </div>
+
+                    <!-- Main Headline Stacked -->
+                    <h1 class="text-5xl sm:text-7xl lg:text-[80px] font-serif-brand font-bold leading-[0.95] uppercase tracking-wide">
+                        <span class="block text-white">FRAMES BY</span>
+                        <span class="block text-white">SAKETH</span>
+                        <span class="block gold-gradient-text font-black mt-1">PRECISION IN</span>
+                        <span class="block gold-gradient-text font-black">EVERY FRAME</span>
+                    </h1>
+
+                    <!-- Description Paragraph -->
+                    <p class="text-gray-400 text-base sm:text-lg max-w-xl font-light leading-relaxed pt-1">
+                        Freelance Portrait, Couple, and Commercial Photography based in India. Capturing authentic moments, luxury campaigns, and visual stories with intentional composition and natural light.
+                    </p>
+
+                    <!-- CTA Buttons Row -->
+                    <div class="flex flex-col sm:flex-row items-center justify-start gap-4 pt-3">
+                        <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-full text-xs uppercase tracking-widest font-extrabold bg-amberGold-500 hover:bg-amberGold-400 text-black transition-all shadow-lg pill-glow flex items-center justify-center space-x-2">
+                            <span>EXPLORE ARCHIVES</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#booking" class="w-full sm:w-auto px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold bg-obsidian-card border border-white/10 hover:border-amberGold-500/50 text-white transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-calculator text-amberGold-500"></i>
+                            <span>COST ESTIMATOR</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Featured Photographer Image Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-obsidian-card card-gold-glow group">
+                        <!-- Hero Image: Mountain Peak Photographer -->
+                        <img id="heroImage" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=1200" alt="Frames By Saketh Mountain Landscape" class="w-full h-[520px] sm:h-[580px] object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        
+                        <!-- Overlay Details -->
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <span class="px-3 py-1 rounded-md bg-amberGold-500/20 border border-amberGold-500/30 text-amberGold-500 text-[10px] font-extrabold uppercase tracking-widest inline-block mb-2">
+                                FEATURED FRAME
+                            </span>
+                            <h3 class="text-2xl font-serif-brand text-white font-bold tracking-wide uppercase">Golden Hour Horizons</h3>
+                            <p class="text-gray-400 text-xs mt-1 font-light">High-altitude landscape cinematography captured on commission.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="section-header">
-            <p>The Craft</p>
-            <h2>Intentional Composition</h2>
-        </div>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-muted); font-size: 1.05rem;">
-            At FRAMES BY SAKETH, photography is approached as an art of precision and timing. Every image is captured with intention—balancing natural light, architectural geometry, and genuine human emotion to deliver timeless visual work for portraits, couples, and commercial campaigns.
-        </p>
-    </section>
-
-    <!-- Interactive Portfolio Section -->
-    <section id="portfolio">
-        <div class="section-header">
-            <p>Curated Work</p>
-            <h2>Selected Archives</h2>
-        </div>
-
-        <div class="gallery-filters">
-            <button class="filter-btn active" onclick="filterGallery('all')">All Works</button>
-            <button class="filter-btn" onclick="filterGallery('portrait')">Portraits</button>
-            <button class="filter-btn" onclick="filterGallery('couple')">Couple</button>
-            <button class="filter-btn" onclick="filterGallery('commercial')">Commercial</button>
-        </div>
-
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- Portrait Item -->
-            <div class="gallery-item portrait" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Solo Portrait">
-                <div class="gallery-overlay">
-                    <h3>Monochrome Tone</h3>
-                    <p>Portrait Series</p>
+    <section id="about" class="py-24 bg-obsidian-surface border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Artist Portrait -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-amberGold-500/20 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&q=80&w=900" alt="Saketh Photographer" class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/80 backdrop-blur-md border border-white/10">
+                            <div class="text-white font-serif-brand text-xl font-bold uppercase tracking-wider">Saketh Goud</div>
+                            <div class="text-amberGold-500 text-xs uppercase tracking-widest font-semibold mt-0.5">Freelance Visual Storyteller</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Couple Item -->
-            <div class="gallery-item couple" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80" alt="Couple Photography">
-                <div class="gallery-overlay">
-                    <h3>Golden Hour Glow</h3>
-                    <p>Couple Series</p>
-                </div>
-            </div>
+                <!-- Bio Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block px-3.5 py-1.5 rounded-full bg-amberGold-500/10 border border-amberGold-500/20 text-amberGold-500 text-xs font-bold uppercase tracking-widest">
+                        THE ARTISTRY
+                    </div>
 
-            <!-- Commercial Item -->
-            <div class="gallery-item commercial" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Product Photography">
-                <div class="gallery-overlay">
-                    <h3>Minimalist Watch</h3>
-                    <p>Commercial Shoot</p>
-                </div>
-            </div>
+                    <h2 class="text-4xl sm:text-5xl font-serif-brand font-bold text-white uppercase leading-tight">
+                        Intentional Lighting.<br/>
+                        <span class="gold-gradient-text">Authentic Visual Narrative.</span>
+                    </h2>
 
-            <!-- Portrait Item 2 -->
-            <div class="gallery-item portrait" onclick="openLightbox(this)">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Outdoor Headshot">
-                <div class="gallery-overlay">
-                    <h3>Natural Light</h3>
-                    <p>Portrait Series</p>
+                    <p class="text-gray-300 text-base leading-relaxed font-light">
+                        At <span class="text-white font-semibold">FRAMES BY SAKETH</span>, photography is executed with surgical focus and refined taste. Every frame balances atmospheric ambient light, architectural composition, and human authenticity.
+                    </p>
+
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">
+                        Specializing in high-end personal portraits, intimate couple stories, and commercial campaigns across India and abroad.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        <div class="p-6 rounded-2xl bg-obsidian-card border border-white/5 space-y-2">
+                            <i class="fa-solid fa-sun text-2xl text-amberGold-500"></i>
+                            <h4 class="text-white font-bold text-xs uppercase tracking-widest">Natural Light Mastery</h4>
+                            <p class="text-xs text-gray-400">Harnessing golden hour angles and atmospheric depth without artificial distortion.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-obsidian-card border border-white/5 space-y-2">
+                            <i class="fa-solid fa-location-dot text-2xl text-amberGold-500"></i>
+                            <h4 class="text-white font-bold text-xs uppercase tracking-widest">On-Location Flexibility</h4>
+                            <p class="text-xs text-gray-400">Available across Hyderabad, pan-India, and international destinations.</p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Lightbox Popup -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightboxImg" src="" alt="Enlarged View">
+    <section id="portfolio" class="py-24 bg-obsidian-base relative">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <div class="inline-block px-3.5 py-1.5 rounded-full bg-amberGold-500/10 border border-amberGold-500/20 text-amberGold-500 text-xs font-bold uppercase tracking-widest">
+                    SELECTED WORKS
+                </div>
+                <h2 class="text-4xl sm:text-5xl font-serif-brand font-bold text-white uppercase">
+                    CURATED <span class="gold-gradient-text">PORTFOLIO</span>
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Explore curated portraiture, intimate couple stories, and editorial commercial commissions.
+                </p>
+            </div>
+
+            <!-- Exact Filter Tabs Requested: All Works, Portraits, Couple, Commercial -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-12" id="filterContainer">
+                <button onclick="filterGallery('all', this)" class="filter-btn active px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-amberGold-500 text-black pill-glow">
+                    All Works
+                </button>
+                <button onclick="filterGallery('portrait', this)" class="filter-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-obsidian-card text-gray-400 hover:text-white border border-white/10">
+                    Portraits
+                </button>
+                <button onclick="filterGallery('couple', this)" class="filter-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-obsidian-card text-gray-400 hover:text-white border border-white/10">
+                    Couple
+                </button>
+                <button onclick="filterGallery('commercial', this)" class="filter-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-obsidian-card text-gray-400 hover:text-white border border-white/10">
+                    Commercial
+                </button>
+            </div>
+
+            <!-- Photo Grid Gallery -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
+                
+                <!-- Portrait 1 -->
+                <div class="gallery-item portrait group relative rounded-2xl overflow-hidden border border-white/10 bg-obsidian-card cursor-pointer aspect-[3/4] shadow-xl transition-all duration-300 hover:border-amberGold-500/50" onclick="openLightbox('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80', 'Monochrome Identity', 'Portrait Series')">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Monochrome Identity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-amberGold-500 text-xs font-bold uppercase tracking-widest">Portrait Series</span>
+                        <h3 class="text-xl font-serif-brand font-bold text-white mt-1 uppercase">Monochrome Identity</h3>
+                    </div>
+                </div>
+
+                <!-- Couple 1 -->
+                <div class="gallery-item couple group relative rounded-2xl overflow-hidden border border-white/10 bg-obsidian-card cursor-pointer aspect-[3/4] shadow-xl transition-all duration-300 hover:border-amberGold-500/50" onclick="openLightbox('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80', 'Golden Hour Embrace', 'Couple Story')">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80" alt="Golden Hour Embrace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-amberGold-500 text-xs font-bold uppercase tracking-widest">Couple Story</span>
+                        <h3 class="text-xl font-serif-brand font-bold text-white mt-1 uppercase">Golden Hour Embrace</h3>
+                    </div>
+                </div>
+
+                <!-- Commercial 1 -->
+                <div class="gallery-item commercial group relative rounded-2xl overflow-hidden border border-white/10 bg-obsidian-card cursor-pointer aspect-[3/4] shadow-xl transition-all duration-300 hover:border-amberGold-500/50" onclick="openLightbox('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80', 'Luxury Timepiece', 'Commercial Shoot')">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Luxury Timepiece" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-amberGold-500 text-xs font-bold uppercase tracking-widest">Commercial Shoot</span>
+                        <h3 class="text-xl font-serif-brand font-bold text-white mt-1 uppercase">Luxury Timepiece</h3>
+                    </div>
+                </div>
+
+                <!-- Portrait 2 -->
+                <div class="gallery-item portrait group relative rounded-2xl overflow-hidden border border-white/10 bg-obsidian-card cursor-pointer aspect-[3/4] shadow-xl transition-all duration-300 hover:border-amberGold-500/50" onclick="openLightbox('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80', 'Natural Silhouette', 'Portrait Series')">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Natural Silhouette" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-amberGold-500 text-xs font-bold uppercase tracking-widest">Portrait Series</span>
+                        <h3 class="text-xl font-serif-brand font-bold text-white mt-1 uppercase">Natural Silhouette</h3>
+                    </div>
+                </div>
+
+                <!-- Couple 2 -->
+                <div class="gallery-item couple group relative rounded-2xl overflow-hidden border border-white/10 bg-obsidian-card cursor-pointer aspect-[3/4] shadow-xl transition-all duration-300 hover:border-amberGold-500/50" onclick="openLightbox('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80', 'Destination Promise', 'Couple Story')">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" alt="Destination Promise" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-amberGold-500 text-xs font-bold uppercase tracking-widest">Couple Story</span>
+                        <h3 class="text-xl font-serif-brand font-bold text-white mt-1 uppercase">Destination Promise</h3>
+                    </div>
+                </div>
+
+                <!-- Commercial 2 -->
+                <div class="gallery-item commercial group relative rounded-2xl overflow-hidden border border-white/10 bg-obsidian-card cursor-pointer aspect-[3/4] shadow-xl transition-all duration-300 hover:border-amberGold-500/50" onclick="openLightbox('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80', 'Minimal Apparel Campaign', 'Commercial Shoot')">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Minimal Apparel Campaign" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-amberGold-500 text-xs font-bold uppercase tracking-widest">Commercial Shoot</span>
+                        <h3 class="text-xl font-serif-brand font-bold text-white mt-1 uppercase">Minimal Lookbook</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl hidden flex items-center justify-center p-4">
+        <button id="closeLightbox" class="absolute top-6 right-6 text-gray-400 hover:text-amberGold-500 text-3xl focus:outline-none z-10 p-2 transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-5xl w-full flex flex-col items-center">
+            <div class="relative w-full max-h-[80vh] flex items-center justify-center">
+                <img id="lightboxImg" src="" alt="Enlarged View" class="max-h-[75vh] max-w-full object-contain rounded-xl border border-white/10 shadow-2xl">
+            </div>
+            <div class="mt-5 text-center">
+                <span id="lightboxCategory" class="text-amberGold-500 text-xs font-bold uppercase tracking-widest block mb-1"></span>
+                <h3 id="lightboxTitle" class="text-2xl font-serif-brand text-white font-bold uppercase"></h3>
+            </div>
+        </div>
     </div>
 
-    <!-- Live Session Cost Estimator -->
-    <section id="booking">
-        <div class="section-header">
-            <p>Investment</p>
-            <h2>Session Cost Estimator</h2>
-        </div>
-
-        <div class="grid-two-col">
-            <div>
-                <div class="form-group">
-                    <label for="sessionType">Service Type</label>
-                    <select id="sessionType" onchange="calculatePrice()">
-                        <option value="2500">Portrait Session (₹2,500/hr)</option>
-                        <option value="3500">Couple Session (₹3,500/hr)</option>
-                        <option value="5000">Commercial Shoot (₹5,000/hr)</option>
-                    </select>
+    <section id="booking" class="py-24 bg-obsidian-surface border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-block px-3.5 py-1.5 rounded-full bg-amberGold-500/10 border border-amberGold-500/20 text-amberGold-500 text-xs font-bold uppercase tracking-widest">
+                    INVESTMENT
                 </div>
-
-                <div class="form-group">
-                    <label for="duration">Duration (Hours)</label>
-                    <select id="duration" onchange="calculatePrice()">
-                        <option value="1">1 Hour</option>
-                        <option value="2" selected>2 Hours</option>
-                        <option value="4">Half Day (4 Hours)</option>
-                        <option value="8">Full Day (8 Hours)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="locationType">Location Preference</label>
-                    <select id="locationType">
-                        <option>Outdoor / On-Location</option>
-                        <option>Rented Location / Venue</option>
-                    </select>
-                </div>
+                <h2 class="text-4xl sm:text-5xl font-serif-brand font-bold text-white uppercase">
+                    SESSION COST <span class="gold-gradient-text">ESTIMATOR</span>
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Select your custom session parameters below for real-time live quotation in INR (₹).
+                </p>
             </div>
 
-            <div class="estimate-box">
-                <p style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Estimated Package Price</p>
-                <div class="estimate-price" id="totalPrice">₹5,000</div>
-                <button class="btn" onclick="sendInquiry()">Book Session via WhatsApp</button>
-            </div>
-        </div>
-    </section>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Inputs Box -->
+                <div class="lg:col-span-8 bg-obsidian-card rounded-3xl border border-white/10 p-6 sm:p-8 space-y-6 shadow-2xl">
+                    <div class="space-y-3">
+                        <label class="block text-xs uppercase tracking-widest font-bold text-amberGold-500">1. Select Service Type</label>
+                        <select id="sessionType" onchange="calculatePrice()" class="w-full bg-obsidian-surface border border-white/10 rounded-2xl p-4 text-sm text-white focus:outline-none focus:border-amberGold-500">
+                            <option value="2500">Portrait Session — ₹2,500 / hr</option>
+                            <option value="3500">Couple Story Session — ₹3,500 / hr</option>
+                            <option value="5000">Commercial Campaign Shoot — ₹5,000 / hr</option>
+                        </select>
+                    </div>
 
-    <!-- Contact Details Section -->
-    <section id="contact">
-        <div class="section-header">
-            <p>Get In Touch</p>
-            <h2>Direct Commissions & Inquiries</h2>
-        </div>
+                    <div class="space-y-3">
+                        <label class="block text-xs uppercase tracking-widest font-bold text-amberGold-500">2. Duration (Hours)</label>
+                        <select id="duration" onchange="calculatePrice()" class="w-full bg-obsidian-surface border border-white/10 rounded-2xl p-4 text-sm text-white focus:outline-none focus:border-amberGold-500">
+                            <option value="1">1 Hour Quick Shoot</option>
+                            <option value="2" selected>2 Hours Standard Session</option>
+                            <option value="4">Half-Day Session (4 Hours)</option>
+                            <option value="8">Full-Day Session (8 Hours)</option>
+                        </select>
+                    </div>
 
-        <div class="grid-two-col">
-            <!-- Contact Details List -->
-            <div class="contact-info-list">
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <a href="mailto:sakethgoud3@gmail.com">sakethgoud3@gmail.com</a>
+                    <div class="space-y-3">
+                        <label class="block text-xs uppercase tracking-widest font-bold text-amberGold-500">3. Location Preference</label>
+                        <select id="locationType" class="w-full bg-obsidian-surface border border-white/10 rounded-2xl p-4 text-sm text-white focus:outline-none focus:border-amberGold-500">
+                            <option value="Outdoor / On-Location (Hyderabad)">Outdoor / On-Location (Hyderabad)</option>
+                            <option value="Rented Studio Space">Rented Studio Space</option>
+                            <option value="Destination Shoot (Outstation)">Destination Shoot (Outstation)</option>
+                        </select>
                     </div>
                 </div>
 
-                <div class="contact-card">
-                    <i class="fab fa-whatsapp"></i>
-                    <div>
-                        <h4>WhatsApp & Call</h4>
-                        <a href="https://wa.me/919949520803" target="_blank">+91 99495 20803</a>
+                <!-- Price Quote Display Sidebar -->
+                <div class="lg:col-span-4 bg-obsidian-card rounded-3xl border border-amberGold-500/30 p-8 text-center space-y-6 shadow-2xl sticky top-28 card-gold-glow">
+                    <div class="text-xs uppercase tracking-widest text-gray-400 font-semibold">Estimated Base Package</div>
+                    
+                    <div class="text-4xl sm:text-5xl font-serif-brand font-black text-amberGold-500" id="totalPrice">
+                        ₹5,000
                     </div>
+
+                    <p class="text-xs text-gray-400 leading-relaxed font-light" id="breakdownText">
+                        Quote includes high-resolution edited deliverables & raw archive access.
+                    </p>
+
+                    <button onclick="sendInquiry()" class="w-full py-4 rounded-full text-xs uppercase tracking-widest font-extrabold bg-amberGold-500 hover:bg-amberGold-400 text-black transition-all pill-glow flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>BOOK VIA WHATSAPP</span>
+                    </button>
                 </div>
 
-                <div class="contact-card">
-                    <i class="fas fa-location-dot"></i>
-                    <div>
-                        <h4>Location Base</h4>
-                        <p>Hyderabad, Telangana, India</p>
-                    </div>
-                </div>
-
-                <div class="contact-card">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <h4>Availability</h4>
-                        <p>Mon – Sat: 09:00 AM – 07:00 PM IST</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Direct Message Form -->
-            <div>
-                <div id="form-status"></div>
-                <form id="contactForm" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" id="clientName" name="name" placeholder="Enter your full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" id="clientEmail" name="email" placeholder="name@domain.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Project Details / Message</label>
-                        <textarea id="clientMessage" name="message" rows="4" placeholder="Tell us about your project vision, date, or specific location requirements..." required></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn" class="btn" style="width: 100%;">Send Direct Message</button>
-                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-icons">
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="mailto:sakethgoud3@gmail.com"><i class="fas fa-envelope"></i></a>
+    <section id="contact" class="py-24 bg-obsidian-base relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-block px-3.5 py-1.5 rounded-full bg-amberGold-500/10 border border-amberGold-500/20 text-amberGold-500 text-xs font-bold uppercase tracking-widest">
+                    GET IN TOUCH
+                </div>
+                <h2 class="text-4xl sm:text-5xl font-serif-brand font-bold text-white uppercase">
+                    DIRECT COMMISSIONS & <span class="gold-gradient-text">INQUIRIES</span>
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Have a vision or upcoming brand campaign? Connect directly via WhatsApp or Email.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="p-6 rounded-2xl bg-obsidian-card border border-white/10 flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold-500/10 border border-amberGold-500/20 flex items-center justify-center shrink-0">
+                            <i class="fa-brands fa-whatsapp text-amberGold-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-gray-400 uppercase tracking-widest font-semibold">WhatsApp & Call</div>
+                            <a href="https://wa.me/919949520803" target="_blank" class="text-white font-bold text-base hover:text-amberGold-500 transition-colors">
+                                +91 99495 20803
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-obsidian-card border border-white/10 flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold-500/10 border border-amberGold-500/20 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-envelope text-amberGold-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-gray-400 uppercase tracking-widest font-semibold">Direct Email</div>
+                            <a href="mailto:sakethgoud3@gmail.com" class="text-white font-bold text-base hover:text-amberGold-500 transition-colors">
+                                sakethgoud3@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-obsidian-card border border-white/10 flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold-500/10 border border-amberGold-500/20 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-location-dot text-amberGold-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-gray-400 uppercase tracking-widest font-semibold">Location Base</div>
+                            <div class="text-white font-bold text-base">
+                                Hyderabad, Telangana, India
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Section -->
+                <div class="lg:col-span-7 bg-obsidian-card p-8 rounded-3xl border border-white/10 shadow-2xl">
+                    <div id="formStatus" class="hidden mb-4 p-4 rounded-2xl text-xs uppercase tracking-widest font-bold"></div>
+                    
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2 font-semibold">Your Name</label>
+                                <input type="text" id="clientName" required placeholder="Full Name" class="w-full bg-obsidian-surface border border-white/10 rounded-2xl p-4 text-sm text-white focus:outline-none focus:border-amberGold-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2 font-semibold">Email Address</label>
+                                <input type="email" id="clientEmail" required placeholder="name@domain.com" class="w-full bg-obsidian-surface border border-white/10 rounded-2xl p-4 text-sm text-white focus:outline-none focus:border-amberGold-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2 font-semibold">Project / Campaign Vision</label>
+                            <textarea id="clientMessage" required rows="4" placeholder="Detail your project requirements, preferred shoot dates, or location context..." class="w-full bg-obsidian-surface border border-white/10 rounded-2xl p-4 text-sm text-white focus:outline-none focus:border-amberGold-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-full text-xs uppercase tracking-widest font-extrabold bg-amberGold-500 hover:bg-amberGold-400 text-black transition-all pill-glow">
+                            SEND DIRECT MESSAGE
+                        </button>
+                    </form>
+                </div>
+
+            </div>
         </div>
-        <p>&copy; 2026 FRAMES BY SAKETH. All rights reserved.</p>
+    </section>
+
+    <footer class="py-12 bg-obsidian-base border-t border-white/5 text-center text-xs text-gray-500 space-y-4">
+        <div class="font-serif-brand text-2xl text-white font-bold tracking-widest uppercase">
+            FRAMES <span class="text-amberGold-500">BY SAKETH</span>
+        </div>
+        <p class="text-amberGold-500/80 text-[11px] uppercase tracking-[0.25em] font-semibold">PRECISION IN EVERY FRAME</p>
+        
+        <div class="flex justify-center space-x-6 pt-3 text-gray-400">
+            <a href="https://wa.me/919949520803" target="_blank" class="hover:text-amberGold-500 transition-colors"><i class="fab fa-whatsapp text-lg"></i></a>
+            <a href="mailto:sakethgoud3@gmail.com" class="hover:text-amberGold-500 transition-colors"><i class="fas fa-envelope text-lg"></i></a>
+            <a href="#" class="hover:text-amberGold-500 transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+        </div>
+
+        <p class="pt-4 text-[11px] text-gray-600">&copy; 2026 FRAMES BY SAKETH. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript Interactions -->
     <script>
-        // Calculate price when DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', calculatePrice);
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-        // Gallery Filter Function
-        function filterGallery(category) {
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Gallery Filtering Function for: all, portrait, couple, commercial
+        function filterGallery(category, btnElement) {
             const items = document.querySelectorAll('.gallery-item');
             const buttons = document.querySelectorAll('.filter-btn');
 
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-amberGold-500', 'text-black', 'pill-glow');
+                btn.classList.add('bg-obsidian-card', 'text-gray-400');
+            });
+
+            btnElement.classList.add('active', 'bg-amberGold-500', 'text-black', 'pill-glow');
+            btnElement.classList.remove('bg-obsidian-card', 'text-gray-400');
 
             items.forEach(item => {
                 if (category === 'all' || item.classList.contains(category)) {
@@ -674,18 +566,29 @@
             });
         }
 
-        // Lightbox Functions
-        function openLightbox(element) {
-            const imgSrc = element.querySelector('img').src;
-            document.getElementById('lightboxImg').src = imgSrc;
-            document.getElementById('lightbox').style.display = 'flex';
+        // Lightbox Popup Controls
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxCategory = document.getElementById('lightboxCategory');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        function openLightbox(url, title, category) {
+            lightboxImg.src = url;
+            lightboxTitle.innerText = title;
+            lightboxCategory.innerText = category;
+            lightboxModal.classList.remove('hidden');
         }
 
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
+        closeLightbox.addEventListener('click', () => {
+            lightboxModal.classList.add('hidden');
+        });
 
-        // Price Estimator Calculation (in INR)
+        lightboxModal.addEventListener('click', (e) => {
+            if(e.target === lightboxModal) lightboxModal.classList.add('hidden');
+        });
+
+        // Price Calculation in INR (₹)
         function calculatePrice() {
             const rate = parseInt(document.getElementById('sessionType').value);
             const hours = parseInt(document.getElementById('duration').value);
@@ -693,29 +596,34 @@
             document.getElementById('totalPrice').innerText = '₹' + total.toLocaleString('en-IN');
         }
 
-        // Send Inquiry via WhatsApp directly to +91 9949520803
+        // WhatsApp Inquiry Trigger
         function sendInquiry() {
             const price = document.getElementById('totalPrice').innerText;
-            const session = document.getElementById('sessionType').options[document.getElementById('sessionType').selectedIndex].text;
-            const message = encodeURIComponent(`Hi Saketh, I evaluated my shoot on your website for a ${session}. Estimated total is ${price}. I'd like to check availability!`);
+            const sessionSelect = document.getElementById('sessionType');
+            const sessionText = sessionSelect.options[sessionSelect.selectedIndex].text;
+            const durationSelect = document.getElementById('duration');
+            const durationText = durationSelect.options[durationSelect.selectedIndex].text;
+            const locationText = document.getElementById('locationType').value;
+
+            const message = encodeURIComponent(`Hi Saketh, I evaluated my shoot on your website for a ${sessionText} (${durationText}, ${locationText}). Estimated quote is ${price}. I would like to check shoot availability!`);
             window.open(`https://wa.me/919949520803?text=${message}`, '_blank');
         }
 
-        // Direct Email Form Trigger targeting sakethgoud3@gmail.com
+        // Form Email Handler
         function handleFormSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('clientName').value;
             const email = document.getElementById('clientEmail').value;
             const details = document.getElementById('clientMessage').value;
-            
-            const subject = encodeURIComponent(`New Photography Inquiry from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProject Message:\n${details}`);
-            
+
+            const subject = encodeURIComponent(`Photography Inquiry from ${name}`);
+            const body = encodeURIComponent(`Client Name: ${name}\nClient Email: ${email}\n\nProject Message:\n${details}`);
+
+            const formStatus = document.getElementById('formStatus');
+            formStatus.className = 'block p-4 rounded-2xl text-xs uppercase tracking-widest font-bold bg-amberGold-500/20 border border-amberGold-500 text-amberGold-500 mb-4';
+            formStatus.innerText = 'Opening email client to direct message sakethgoud3@gmail.com...';
+
             window.location.href = `mailto:sakethgoud3@gmail.com?subject=${subject}&body=${body}`;
-            
-            const statusDiv = document.getElementById('form-status');
-            statusDiv.className = 'success';
-            statusDiv.innerText = 'Opening your email client to dispatch your message to sakethgoud3@gmail.com...';
         }
     </script>
 </body>
