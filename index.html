@@ -543,15 +543,15 @@
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h4>Email Studio</h4>
-                        <a href="mailto:contact@framesbysaketh.com">contact@framesbysaketh.com</a>
+                        <a href="mailto:sakethgoud3@gmail.com">sakethgoud3@gmail.com</a>
                     </div>
                 </div>
 
                 <div class="contact-card">
                     <i class="fab fa-whatsapp"></i>
                     <div>
-                        <h4>Direct WhatsApp</h4>
-                        <a href="https://wa.me/919999999999" target="_blank">+91 99999 99999</a>
+                        <h4>Direct WhatsApp & Call</h4>
+                        <a href="https://wa.me/919949520803" target="_blank">+91 99495 20803</a>
                     </div>
                 </div>
 
@@ -599,7 +599,7 @@
             <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="mailto:contact@framesbysaketh.com"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:sakethgoud3@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
         <p>&copy; 2026 FRAMES BY SAKETH. All rights reserved.</p>
     </footer>
@@ -642,15 +642,15 @@
             document.getElementById('totalPrice').innerText = '$' + total;
         }
 
-        // Send Inquiry via WhatsApp
+        // Send Inquiry via WhatsApp directly to +91 9949520803
         function sendInquiry() {
             const price = document.getElementById('totalPrice').innerText;
             const session = document.getElementById('sessionType').options[document.getElementById('sessionType').selectedIndex].text;
             const message = encodeURIComponent(`Hi Saketh, I evaluated my shoot on your website for a ${session}. Estimated total is ${price}. I'd like to check availability!`);
-            window.open(`https://wa.me/?text=${message}`, '_blank');
+            window.open(`https://wa.me/919949520803?text=${message}`, '_blank');
         }
 
-        // Direct Email Form Trigger
+        // Direct Email Form Trigger targeting sakethgoud3@gmail.com
         function sendDirectEmail() {
             const name = document.getElementById('clientName').value;
             const email = document.getElementById('clientEmail').value;
@@ -659,7 +659,7 @@
             const subject = encodeURIComponent(`New Commission Inquiry from ${name}`);
             const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProject Message:\n${details}`);
             
-            window.location.href = `mailto:contact@framesbysaketh.com?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:sakethgoud3@gmail.com?subject=${subject}&body=${body}`;
         }
     </script>
 </body>
