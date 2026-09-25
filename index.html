@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRAMES BY SAKETH — Freelance Photography & Visual Arts</title>
+    <title>FRAMES BY SAKETH — Independent Visual Artist & Photographer</title>
     <meta name="description" content="FRAMES BY SAKETH — Freelance portrait, couple, and commercial photography. Precision in every frame through intentional composition and natural light.">
     
     <!-- Google Fonts & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-dark: #0d0d0d;
-            --bg-card: #141414;
+            --bg-dark: #070707;
+            --bg-card: #0f0f11;
+            --bg-elevated: #151518;
             --accent: #d4af37; /* Muted Amber Gold */
+            --accent-glow: rgba(212, 175, 55, 0.15);
             --text-main: #f5f5f7;
-            --text-muted: #a1a1a6;
-            --border: rgba(255, 255, 255, 0.1);
-            --transition: all 0.3s ease;
+            --text-muted: #8e8e93;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-active: rgba(212, 175, 55, 0.4);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -52,43 +55,39 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 8%;
-            background: rgba(13, 13, 13, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(7, 7, 7, 0.88);
+            backdrop-filter: blur(16px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
         }
 
         .logo {
             font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--text-main);
             text-decoration: none;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
         .logo span.signature {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            text-transform: uppercase;
             color: var(--accent);
-            letter-spacing: 2px;
             margin-left: 4px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.2rem;
         }
 
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             transition: var(--transition);
         }
 
@@ -104,32 +103,35 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 1rem;
-            background: linear-gradient(180deg, rgba(13,13,13,0.4) 0%, rgba(13,13,13,1) 100%), 
+            padding: 0 1.5rem;
+            background: linear-gradient(180deg, rgba(7,7,7,0.3) 0%, rgba(7,7,7,0.95) 100%), 
                         url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-size: clamp(2.2rem, 5.5vw, 4.5rem);
             margin-bottom: 1rem;
             text-transform: uppercase;
+            font-weight: 600;
+            line-height: 1.2;
         }
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            max-width: 620px;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.5px;
         }
 
         .btn {
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.2rem;
             border: 1px solid var(--accent);
             color: var(--accent);
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
+            font-size: 0.8rem;
+            letter-spacing: 2.5px;
             transition: var(--transition);
             background: transparent;
             cursor: pointer;
@@ -139,11 +141,12 @@
         .btn:hover {
             background: var(--accent);
             color: var(--bg-dark);
+            box-shadow: 0 0 25px var(--accent-glow);
         }
 
-        /* Section Styling */
+        /* Section Layouts */
         section {
-            padding: 6rem 8%;
+            padding: 6.5rem 8%;
         }
 
         .section-header {
@@ -155,21 +158,22 @@
             font-size: 2.2rem;
             color: var(--text-main);
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .section-header p {
             color: var(--accent);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
-        /* Gallery Filter Buttons */
+        /* Portfolio Gallery Filter Buttons */
         .gallery-filters {
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
             flex-wrap: wrap;
         }
 
@@ -177,9 +181,11 @@
             background: none;
             border: none;
             color: var(--text-muted);
-            padding: 0.5rem 1.2rem;
+            padding: 0.6rem 1.4rem;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             transition: var(--transition);
             border-bottom: 2px solid transparent;
         }
@@ -192,8 +198,8 @@
         /* Gallery Grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.8rem;
         }
 
         .gallery-item {
@@ -202,27 +208,29 @@
             overflow: hidden;
             cursor: pointer;
             aspect-ratio: 3/4;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 1.5rem;
+            padding: 2rem;
             opacity: 0;
             transition: var(--transition);
         }
@@ -232,13 +240,16 @@
         }
 
         .gallery-overlay h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #fff;
+            margin-bottom: 0.2rem;
         }
 
         .gallery-overlay p {
             color: var(--accent);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
 
         /* Lightbox Modal */
@@ -257,7 +268,8 @@
             max-width: 90%;
             max-height: 85vh;
             border-radius: 4px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            box-shadow: 0 0 40px rgba(0,0,0,0.9);
+            border: 1px solid var(--border);
         }
 
         .lightbox-close {
@@ -267,21 +279,29 @@
             color: #fff;
             font-size: 2rem;
             cursor: pointer;
+            transition: var(--transition);
         }
 
-        /* Booking & Contact Section Layout */
+        .lightbox-close:hover {
+            color: var(--accent);
+        }
+
+        /* Grid Cards Layout */
         .grid-two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 3.5rem;
             background: var(--bg-card);
-            padding: 3rem;
+            padding: 3.5rem;
             border: 1px solid var(--border);
             border-radius: 8px;
         }
 
-        @media (max-width: 768px) {
-            .grid-two-col { grid-template-columns: 1fr; }
+        @media (max-width: 850px) {
+            .grid-two-col { 
+                grid-template-columns: 1fr; 
+                padding: 2rem;
+            }
         }
 
         .form-group {
@@ -290,19 +310,27 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .form-group select, .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            background: #1e1e1e;
+            padding: 0.9rem;
+            background: var(--bg-elevated);
             border: 1px solid var(--border);
             color: var(--text-main);
             border-radius: 4px;
             font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group select:focus, .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--border-active);
         }
 
         .estimate-box {
@@ -310,18 +338,19 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #1a1a1a;
+            background: var(--bg-elevated);
             border: 1px solid var(--border);
             border-radius: 6px;
-            padding: 2rem;
+            padding: 2.5rem;
             text-align: center;
         }
 
         .estimate-price {
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: var(--accent);
             font-weight: 700;
-            margin: 1rem 0;
+            margin: 1.2rem 0;
+            font-family: 'Cinzel', serif;
         }
 
         /* Contact Cards */
@@ -335,24 +364,24 @@
         .contact-card {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
-            padding: 1.2rem;
-            background: #1a1a1a;
+            gap: 1.4rem;
+            padding: 1.4rem;
+            background: var(--bg-elevated);
             border: 1px solid var(--border);
             border-radius: 6px;
         }
 
         .contact-card i {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--accent);
             width: 40px;
             text-align: center;
         }
 
         .contact-card div h4 {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 0.2rem;
         }
 
@@ -370,8 +399,8 @@
         /* Form Status Notification */
         #form-status {
             display: none;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
+            padding: 0.9rem;
+            margin-bottom: 1.2rem;
             border-radius: 4px;
             font-size: 0.85rem;
             text-align: center;
@@ -379,7 +408,7 @@
 
         #form-status.success {
             display: block;
-            background: rgba(40, 167, 69, 0.2);
+            background: rgba(40, 167, 69, 0.15);
             border: 1px solid #28a745;
             color: #28a745;
         }
@@ -388,16 +417,17 @@
         footer {
             border-top: 1px solid var(--border);
             text-align: center;
-            padding: 3rem 8%;
+            padding: 3.5rem 8%;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1.8rem;
+            margin-bottom: 1.8rem;
         }
 
         .social-icons a {
@@ -437,7 +467,7 @@
             <p>The Craft</p>
             <h2>Intentional Composition</h2>
         </div>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-muted);">
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-muted); font-size: 1.05rem;">
             At FRAMES BY SAKETH, photography is approached as an art of precision and timing. Every image is captured with intention—balancing natural light, architectural geometry, and genuine human emotion to deliver timeless visual work for portraits, couples, and commercial campaigns.
         </p>
     </section>
@@ -539,7 +569,7 @@
             </div>
 
             <div class="estimate-box">
-                <p>Estimated Package Price</p>
+                <p style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Estimated Package Price</p>
                 <div class="estimate-price" id="totalPrice">₹5,000</div>
                 <button class="btn" onclick="sendInquiry()">Book Session via WhatsApp</button>
             </div>
@@ -624,7 +654,7 @@
 
     <!-- JavaScript Interactions -->
     <script>
-        // Initial price calculation on page load
+        // Calculate price when DOM is fully loaded
         document.addEventListener('DOMContentLoaded', calculatePrice);
 
         // Gallery Filter Function
@@ -685,7 +715,7 @@
             
             const statusDiv = document.getElementById('form-status');
             statusDiv.className = 'success';
-            statusDiv.innerText = 'Opening your email app to send the message to sakethgoud3@gmail.com...';
+            statusDiv.innerText = 'Opening your email client to dispatch your message to sakethgoud3@gmail.com...';
         }
     </script>
 </body>
